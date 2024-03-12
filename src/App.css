@@ -1,0 +1,184 @@
+.app {
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  text-align: center;
+  padding: 20px;
+}
+
+.invite h1, .invite p {
+  margin: 10px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: auto;
+  max-width: 90%; /* Чтобы модальное окно не было слишком широким на маленьких экранах */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Добавляет немного тени для лучшей видимости */
+  z-index: 20;
+}
+
+.modal h2 {
+  margin-top: 0;
+  margin-bottom: 20px; /* Добавляет пространство между заголовком и текстовым полем */
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Добавляет пространство между элементами формы */
+}
+
+.modal textarea {
+  height: 100px; /* Увеличивает высоту текстового поля */
+  padding: 10px; /* Добавляет внутренний отступ для текстового поля */
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Скругляет углы текстового поля */
+  resize: vertical; /* Позволяет пользователю изменять размер текстового поля только вертикально */
+}
+
+.modal button {
+  padding: 10px 20px; /* Увеличивает внутренний отступ кнопок */
+  font-size: 16px; /* Увеличивает размер шрифта для кнопок */
+  border: none;
+  border-radius: 4px; /* Скругляет углы кнопок */
+  cursor: pointer;
+}
+
+.modal button[type="submit"] {
+  background-color: #ff85c0; /* Зеленый фон для кнопки отправки */
+  color: white;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.modal button[type="button"] {
+  background-color: #36a8f4; /* Красный фон для кнопки закрытия */
+  color: white;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.modal button:hover {
+  opacity: 0.8; /* Добавляет эффект при наведении */
+}
+
+select {
+  font-family: "Amatic SC", sans-serif;
+  font-size: 2rem; /* Размер шрифта */
+  color: #333; /* Цвет шрифта */
+  padding: 10px; /* Внутренние отступы */
+  border-radius: 5px; /* Скругление углов */
+  /* Дополнительные стили для select */
+}
+textarea{
+  font-family: "Amatic SC", sans-serif;
+  font-size: 2rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+  z-index: 10; /* Убедитесь, что оверлей находится под модальным окном */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blue {
+  background-color: #36a8f4;
+}
+
+/* Медиа-запросы для адаптации под мобильные устройства */
+@media (max-width: 768px) {
+  .app{
+    font-size: 30px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%; /* Кнопки на всю ширину для улучшенного взаимодействия на мобильных */
+  }
+
+  .modal{
+    width: 80%; /* Используйте проценты или vw для адаптивности */
+  }
+
+  .modal textarea, .modal select {
+    font-size: 1rem; /* Уменьшение размера шрифта для мобильных устройств */
+  }
+
+  .modal button {
+    font-size: 2rem; /* Адаптация размера кнопок */
+  }
+}
+
+button {
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #ff85c0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 50px;
+  font-size: 2rem;
+  margin-top: 10px; /* Добавлено для лучшего отступа между кнопками в мобильной версии */
+}
+
+button:hover {
+  background-color: #f759ab;
+}
+
+button.blue:hover {
+  background-color: #2574a9;
+}
+
+.loader{
+  position: fixed; /* Фиксированное позиционирование относительно окна браузера */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Ширина равна 100% от видимой ширины окна браузера */
+  height: 100vh; /* Высота равна 100% от видимой высоты окна браузера */
+  display: flex;
+  justify-content: center; /* Центрирование содержимого по горизонтали */
+  align-items: center; /* Центрирование содержимого по вертикали */
+  background-color: rgba(255, 255, 255, 0.5); /* Полупрозрачный черный фон */
+  z-index: 1000; /* Убедитесь, что лоадер будет над другими элементами */
+}
+
+.loader img {
+  max-width: 100%; /* Максимальная ширина изображения - 100% от его контейнера */
+  max-height: 100%; /* Максимальная высота изображения - 100% от его контейнера */
+  object-fit: cover; /* Сохраняет пропорции, обрезая лишнее */
+}
+
+
+
+.loader2 img {
+  width: 100%; /* Занимает всю доступную ширину */
+  max-height: 100vh; /* Максимальная высота ограничена высотой видимой части экрана */
+  object-fit: contain; /* Убедитесь, что изображение подстраивается по размеру без искажения */
+}
+
+
